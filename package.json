@@ -2,8 +2,8 @@
   "name": "jstype",
   "version": "1.0.0",
   "description": "Simple JS module to check types more concisely",
-  "main": "jsype.js",
-  "jsnext:main": "jstype.es6.js",
+  "main": "jstype.umd.js",
+  "jsnext:main": "jstype.js",
   "babel": {
     "presets": [
       "es2015"
