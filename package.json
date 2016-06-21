@@ -1,0 +1,43 @@
+{
+  "name": "jstype",
+  "version": "1.0.0",
+  "description": "Simple JS module to check types more concisely",
+  "main": "jsype.js",
+  "jsnext:main": "jstype.es6.js",
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-es2015-modules-umd"
+    ],
+    "comments": false
+  },
+  "scripts": {
+    "compile": "babel jstype.js --out-file jstype.umd.js",
+    "minify": "uglifyjs -cmo jstype.min.js -- jstype.umd.js",
+    "build": "npm run compile && npm run minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexbruno/jstype.git"
+  },
+  "keywords": [
+    "javascript",
+    "type",
+    "test",
+    "check"
+  ],
+  "author": "Alex Bruno <webmaster@alexbruno.net.br>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexbruno/jstype/issues"
+  },
+  "homepage": "https://github.com/alexbruno/jstype#readme",
+  "devDependencies": {
+    "babel-cli": "latest",
+    "babel-plugin-transform-es2015-modules-umd": "latest",
+    "babel-preset-es2015": "latest",
+    "uglify-js": "latest"
+  }
+}
