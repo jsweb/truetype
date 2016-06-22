@@ -4,27 +4,27 @@
   "description": "Simple JS module to check types more concisely",
   "main": "truetype.umd.js",
   "jsnext:main": "truetype.js",
-  "scripts": {
-    "compile": "rollup -c",
-    "minify": "uglifyjs -cmo truetype.min.js -- truetype.umd.js",
-    "build": "npm run compile && npm run minify"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alexbruno/truetype.git"
-  },
+  "author": "Alex Bruno <webmaster@alexbruno.net.br>",
+  "license": "MIT",
   "keywords": [
     "javascript",
     "type",
     "test",
     "check"
   ],
-  "author": "Alex Bruno <webmaster@alexbruno.net.br>",
-  "license": "MIT",
+  "homepage": "https://github.com/alexbruno/truetype#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexbruno/truetype.git"
+  },
   "bugs": {
     "url": "https://github.com/alexbruno/truetype/issues"
   },
-  "homepage": "https://github.com/alexbruno/truetype#readme",
+  "scripts": {
+    "compile": "rollup -c",
+    "minify": "uglifyjs -cmo truetype.min.js -- truetype.umd.js",
+    "build": "npm run compile && npm run minify"
+  },
   "devDependencies": {
     "rollup": "latest",
     "rollup-plugin-buble": "latest",

@@ -1,0 +1,23 @@
+{
+  "name": "truetype",
+  "description": "Simple JS module to check types more concisely",
+  "main": "truetype.umd.js",
+  "authors": [
+    "Alex Bruno <webmaster@alexbruno.net.br>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "type",
+    "test",
+    "check"
+  ],
+  "homepage": "https://github.com/alexbruno/truetype",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
