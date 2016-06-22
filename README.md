@@ -1,4 +1,4 @@
-# jstype
+# truetype
 
 **Simple JS module to check types more concisely**
 
@@ -14,34 +14,34 @@ So, this module aims to check types of variables with more useful returns.
 
 With NPM:
 
-    npm i jstype
+    npm i truetype
 
 With Bower:
 
-    bower i jstype
+    bower i truetype
 
 ##Usage
 
 ###ES6
 ```javascript
-import jstype from 'jstype'
+import truetype from 'truetype'
 ```
 
 ###CommonJS
 ```javascript
-var jstype = require('jstype')
+var truetype = require('truetype')
 ```
 
 ###AMD (RequireJS)
 ```javascript
-require(['jstype'], function(jstype) {
+require(['truetype'], function(truetype) {
 	//...
 })
 ```
 
 ###Script tag (DOM / Global)
 ```html
-<script src="path/to/jstype"></script>
+<script src="path/to/truetype"></script>
 ```
 
 ###Instance
@@ -50,52 +50,52 @@ Just call it passing your variable as argument:
 
 ```javascript
 let x = 'foo bar'
-let tp = jstype(x)
+let tp = truetype(x)
 ```
 
-`jstype` is a function that returns a custom Class Object with the following props and methods:
+`truetype` is a function that returns a custom Class Object with the following props and methods:
 
-####jstype(x).item
+####truetype(x).item
 
 The var `x` itself
 
-####jstype(x).toString()
+####truetype(x).toString()
 
 Returns a string with the var type name like `Object`, `Array`, `String`, `Number`...
 
-####jstype(x).is(type)
+####truetype(x).is(type)
 
 Check if `x` type is equal `type` argument and returns a Boolean.
 
 ```javascript
-jstype(1).is('String')	//returns false
-jstype(1).is('Number')	//returns true
-jstype(1).is('Int')			//returns true
-jstype(1).is('Float')		//returns false
+truetype(1).is('String')	//returns false
+truetype(1).is('Number')	//returns true
+truetype(1).is('Int')			//returns true
+truetype(1).is('Float')		//returns false
 ```
 
-####jstype(x).is{Type}()
+####truetype(x).is{Type}()
 
 Direct methods that check if `x` type of `{Type}`.
 
 ```javascript
-jstype({}).isObject() 				//returns true
-jstype([]).isArray() 					//returns true
-jstype('foo').isString() 			//returns true
-jstype(true).isBoolean() 			//returns true
-jstype(new Date).isDate() 		//returns true
-jstype(/\w/).isRegExp() 			//returns true
-jstype(null).isNull()					//returns true
-jstype(undefined).isDefined()	//returns false :)
-jstype(1).isNumber() 					//returns true
-jstype(1).isInt() 						//returns true
-jstype(1).isFloat() 					//returns false
+truetype({}).isObject() 				//returns true
+truetype([]).isArray() 					//returns true
+truetype('foo').isString() 			//returns true
+truetype(true).isBoolean() 			//returns true
+truetype(new Date).isDate() 		//returns true
+truetype(/\w/).isRegExp() 			//returns true
+truetype(null).isNull()					//returns true
+truetype(undefined).isDefined()	//returns false :)
+truetype(1).isNumber() 					//returns true
+truetype(1).isInt() 						//returns true
+truetype(1).isFloat() 					//returns false
 ```
 
 ###Module
 
 You can choose one of three options according your needs.
 
- - **jstype.js** - main source to use with ES2015 applications/enviroments
- - **jstype.mod.js** - module in Universal Module Definition format to use with AMD, CommonJS, global, browser or any other module loader or compatible JS enviroment
- - **jstype.min.js** - minified with [uglify-js](https://github.com/mishoo/UglifyJS2), compatible with script tag and any module loader, suitable for production, mainly on browsers
+ - **truetype.js** - main source to use with ES2015 applications/enviroments
+ - **truetype.umd.js** - Universal Module Definition format to use with AMD, CommonJS, global, browser or any other module loader or compatible JS enviroment
+ - **truetype.min.js** - minified with [uglify-js](https://github.com/mishoo/UglifyJS2), compatible with script tag and any module loader, suitable for production, mainly on browsers

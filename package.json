@@ -1,17 +1,17 @@
 {
-  "name": "jstype",
+  "name": "truetype",
   "version": "1.0.0",
   "description": "Simple JS module to check types more concisely",
-  "main": "jstype.umd.js",
-  "jsnext:main": "jstype.js",
+  "main": "truetype.umd.js",
+  "jsnext:main": "truetype.js",
   "scripts": {
     "compile": "rollup -c",
-    "minify": "uglifyjs -cmo jstype.min.js -- jstype.mod.js",
+    "minify": "uglifyjs -cmo truetype.min.js -- truetype.umd.js",
     "build": "npm run compile && npm run minify"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexbruno/jstype.git"
+    "url": "git+https://github.com/alexbruno/truetype.git"
   },
   "keywords": [
     "javascript",
@@ -22,12 +22,13 @@
   "author": "Alex Bruno <webmaster@alexbruno.net.br>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/alexbruno/jstype/issues"
+    "url": "https://github.com/alexbruno/truetype/issues"
   },
-  "homepage": "https://github.com/alexbruno/jstype#readme",
+  "homepage": "https://github.com/alexbruno/truetype#readme",
   "devDependencies": {
     "rollup": "latest",
     "rollup-plugin-buble": "latest",
+    "rollup-plugin-json": "latest",
     "uglify-js": "latest"
   }
 }

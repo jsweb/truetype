@@ -1,4 +1,4 @@
-class JSType {
+class TrueType {
 	constructor(x) {
 		try {
 			this.item = x
@@ -73,4 +73,4 @@ class JSType {
 	}
 }
 
-export default x => new JSType(x)
+export default x => new TrueType(x)

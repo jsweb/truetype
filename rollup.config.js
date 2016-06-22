@@ -1,10 +1,10 @@
 import buble from 'rollup-plugin-buble'
 
 export default {
-  moduleId: 'jstype',
-  moduleName: 'jstype',
-  entry: 'jstype.js',
-  dest: 'jstype.mod.js',
+  moduleId: 'truetype',
+  moduleName: 'truetype',
+  entry: 'truetype.js',
+  dest: 'truetype.umd.js',
   plugins: [ buble() ],
   format: 'umd'
 }
