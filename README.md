@@ -50,14 +50,14 @@ Just call it passing your variable as argument:
 
 ```javascript
 let x = 'foo bar'
-let tp = truetype(x)
+let type = truetype(x)
 ```
 
 `truetype` is a function that returns a custom Class Object with the following props and methods:
 
 ####truetype(x).item
 
-The var `x` itself
+The var `x` itself.
 
 ####truetype(x).toString()
 
@@ -67,20 +67,42 @@ Returns a string with the JS builtin var type name like `Object`, `Array`, `Stri
 
 Returns a string with the var constructor name.
 
-The returned value will be like `toString()` if tested var is a builtin type object, else will be the custom constructor name.
+The returned value will be the same as `toString` if tested var is a builtin type object, else will be the custom constructor name.
 
 ```javascript
-let Foo = (x) => this.x = x
+truetype(1).toString() 		//returns Number
+truetype(1).instance() 		//returns Number
+
+let Foo = x => this.x = x
 let bar = new Foo(1)
 
+truetype(bar).toString() 	//returns Object
 truetype(bar).instance()	//returns Foo
+```
+
+####truetype(x).is{Type}()
+
+Predefined methods that check if `x` type is `{Type}`.
+
+```javascript
+truetype({}).isObject() 				//returns true
+truetype([]).isArray() 					//returns true
+truetype('foo').isString() 			//returns true
+truetype(true).isBoolean() 			//returns true
+truetype(new Date).isDate() 		//returns true
+truetype(1).isNumber() 					//returns true
+truetype(1).isInt() 						//returns true
+truetype(1).isFloat() 					//returns false
+truetype(/\w/).isRegExp() 			//returns true
+truetype(null).isNull()					//returns true
+truetype(undefined).isDefined()	//returns false :)
 ```
 
 ####truetype(x).is(type)
 
 Check if `x` type is equal `type` argument and returns a Boolean.
 
-It's possible to check custom types.
+It's possible to check predefined and custom constructor types.
 
 ```javascript
 truetype(1).is('String')	//returns false
@@ -95,24 +117,6 @@ let bar = new Foo(1)
 truetype(bar).is('Foo')		//returns true
 ```
 
-####truetype(x).is{Type}()
-
-Predefined methods that check if `x` type `{Type}`.
-
-```javascript
-truetype({}).isObject() 				//returns true
-truetype([]).isArray() 					//returns true
-truetype('foo').isString() 			//returns true
-truetype(true).isBoolean() 			//returns true
-truetype(new Date).isDate() 		//returns true
-truetype(/\w/).isRegExp() 			//returns true
-truetype(null).isNull()					//returns true
-truetype(undefined).isDefined()	//returns false :)
-truetype(1).isNumber() 					//returns true
-truetype(1).isInt() 						//returns true
-truetype(1).isFloat() 					//returns false
-```
-
 ###Module
 
 You can choose one of three options according your needs.
@@ -120,3 +124,7 @@ You can choose one of three options according your needs.
  - **truetype.js** - main source to use with ES2015 applications/enviroments
  - **truetype.umd.js** - Universal Module Definition format to use with AMD, CommonJS, global, browser or any other module loader or compatible JS enviroment
  - **truetype.min.js** - minified with [uglify-js](https://github.com/mishoo/UglifyJS2), compatible with script tag and any module loader, suitable for production, mainly on browsers
+
+##TODO
+
+ - Write tests
