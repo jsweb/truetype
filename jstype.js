@@ -1,49 +1,45 @@
 class JSType {
 	constructor(x) {
-		this.item = x
+		try {
+			this.item = x
+		} catch(e) {
+			this.item = undefined
+		}
 	}
 
 	toString() {
 		return Object.prototype.toString.call(this.item).substr(8).replace(']', '')
 	}
 
-	is(type) {
-		return this.toString() === type
-	}
-
 	isObject() {
-		return this.is('Object')
+		return this.toString() === 'Object'
 	}
 
 	isArray() {
-		return this.is('Array')
+		return this.toString() === 'Array'
 	}
 
 	isString() {
-		return this.is('String')
-	}
-
-	isNumber() {
-		return this.is('Number')
+		return this.toString() === 'String'
 	}
 
 	isBoolean() {
-		return this.is('Boolean')
+		return this.toString() === 'Boolean'
 	}
 
 	isNull() {
-		return this.is('Null')
+		return this.toString() === 'Null'
 	}
 
 	isDefined() {
-		return !this.is('Undefined')
+		return !this.toString() === 'Undefined'
 	}
 
-	instance(obj) {
-		return this.item instanceof obj
+	isNumber() {
+		return this.toString() === 'Number'
 	}
 
-	isInteger() {
+	isInt() {
 		if (this.isNumber())
 			return this.item === parseInt(this.item)
 		else
@@ -55,6 +51,17 @@ class JSType {
 			return this.item !== parseInt(this.item)
 		else
 			return false
+	}
+
+	is(type) {
+		switch (type) {
+			case 'Int':
+				return this.isInt()
+			case 'Float':
+				return this.isFloat()
+			default:
+				return this.toString() === type
+		}
 	}
 }
 
