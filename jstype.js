@@ -27,6 +27,14 @@ class JSType {
 		return this.toString() === 'Boolean'
 	}
 
+	isDate() {
+		return this.toString() === 'Date'
+	}
+
+	isRegExp() {
+		return this.toString() === 'RegExp'
+	}
+
 	isNull() {
 		return this.toString() === 'Null'
 	}

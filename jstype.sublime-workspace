@@ -24,9 +24,25 @@
 	"command_palette":
 	{
 		"height": 357.0,
-		"last_filter": "rem",
+		"last_filter": "pus",
 		"selected_items":
 		[
+			[
+				"pus",
+				"Git: Push Current Branch"
+			],
+			[
+				"stat",
+				"Git: Status"
+			],
+			[
+				"comm",
+				"Git: Quick Commit"
+			],
+			[
+				"add",
+				"Git: Add All"
+			],
 			[
 				"rem",
 				"Package Control: Remove Package"
@@ -52,28 +68,12 @@
 				"Git: Push Current Branch"
 			],
 			[
-				"comm",
-				"Git: Quick Commit"
-			],
-			[
-				"add",
-				"Git: Add All"
-			],
-			[
 				"status",
 				"Git: Status"
 			],
 			[
 				"pull",
 				"Git: Pull"
-			],
-			[
-				"stat",
-				"Git: Status"
-			],
-			[
-				"pus",
-				"Git: Push Current Branch"
 			],
 			[
 				"sta",
@@ -88,7 +88,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 467.0
+		"width": 431.0
 	},
 	"console":
 	{
@@ -113,6 +113,13 @@
 	],
 	"file_history":
 	[
+		"/home/alexbruno/Dropbox/Projetos/jstype/index.html",
+		"/home/alexbruno/Dropbox/Projetos/jstype/rollup.config.js",
+		"/home/alexbruno/Dropbox/Projetos/jstype/package.json",
+		"/home/alexbruno/Dropbox/Projetos/jstype/README.md",
+		"/home/alexbruno/Dropbox/Projetos/jstype/jstype.js",
+		"/home/alexbruno/Dropbox/Projetos/jstype/jstype.umd.js",
+		"/home/alexbruno/Dropbox/Projetos/jstype/.gitignore",
 		"/home/alexbruno/Dropbox/Projetos/webgulp/gulpfile.js",
 		"/home/alexbruno/Dropbox/Projetos/webgulp/app/views/index.pug",
 		"/home/alexbruno/Dropbox/Projetos/webgulp/app/views/part/favicon.pug",
@@ -154,6 +161,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"umd",
+			"dist/bundle",
+			"is(",
 			"views",
 			"cached",
 			"full",
@@ -260,7 +270,7 @@
 	{
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
 	"side_bar_width": 263.0,

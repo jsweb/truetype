@@ -70,8 +70,8 @@ Check if `x` type is equal `type` argument and returns a Boolean.
 ```javascript
 jstype(1).is('String')	//returns false
 jstype(1).is('Number')	//returns true
-jstype(1).is('Int')		//returns true
-jstype(1).is('Float')	//returns false
+jstype(1).is('Int')			//returns true
+jstype(1).is('Float')		//returns false
 ```
 
 ####jstype(x).is{Type}()
@@ -79,15 +79,17 @@ jstype(1).is('Float')	//returns false
 Direct methods that check if `x` type of `{Type}`.
 
 ```javascript
-jstype({}).isObject()			//returns true
-jstype([]).isArray()			//returns true
-jstype('foo').isString()		//returns true
-jstype(true).isBoolean()		//returns true
-jstype(null).isNull()			//returns true
+jstype({}).isObject() 				//returns true
+jstype([]).isArray() 					//returns true
+jstype('foo').isString() 			//returns true
+jstype(true).isBoolean() 			//returns true
+jstype(new Date).isDate() 		//returns true
+jstype(/\w/).isRegExp() 			//returns true
+jstype(null).isNull()					//returns true
 jstype(undefined).isDefined()	//returns false :)
-jstype(1).isNumber()			//returns true
-jstype(1).isInt()				//returns true
-jstype(1).isFloat()				//returns false
+jstype(1).isNumber() 					//returns true
+jstype(1).isInt() 						//returns true
+jstype(1).isFloat() 					//returns false
 ```
 
 ###Module
