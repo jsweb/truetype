@@ -14,11 +14,11 @@ So, this module aims to check types of variables with more useful returns.
 
 With NPM:
 
-    npm i truetype
+    npm i -S truetype
 
 With Bower:
 
-    bower i truetype
+    bower i -S truetype
 
 ##Usage
 
