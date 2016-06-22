@@ -61,22 +61,43 @@ The var `x` itself
 
 ####truetype(x).toString()
 
-Returns a string with the var type name like `Object`, `Array`, `String`, `Number`...
+Returns a string with the JS builtin var type name like `Object`, `Array`, `String`, `Number`...
+
+####truetype(x).instance()
+
+Returns a string with the var constructor name.
+
+The returned value will be like `toString()` if tested var is a builtin type object, else will be the custom constructor name.
+
+```javascript
+let Foo = (x) => this.x = x
+let bar = new Foo(1)
+
+truetype(bar).instance()	//returns Foo
+```
 
 ####truetype(x).is(type)
 
 Check if `x` type is equal `type` argument and returns a Boolean.
+
+It's possible to check custom types.
 
 ```javascript
 truetype(1).is('String')	//returns false
 truetype(1).is('Number')	//returns true
 truetype(1).is('Int')			//returns true
 truetype(1).is('Float')		//returns false
+
+//Custom types
+let Foo = (x) => this.x = x
+let bar = new Foo(1)
+
+truetype(bar).is('Foo')		//returns true
 ```
 
 ####truetype(x).is{Type}()
 
-Direct methods that check if `x` type of `{Type}`.
+Predefined methods that check if `x` type `{Type}`.
 
 ```javascript
 truetype({}).isObject() 				//returns true

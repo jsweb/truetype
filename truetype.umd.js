@@ -16,6 +16,10 @@
 		return Object.prototype.toString.call(this.item).substr(8).replace(']', '')
 	};
 
+	TrueType.prototype.instance = function instance () {
+		return this.item.constructor.name
+	};
+
 	TrueType.prototype.isObject = function isObject () {
 		return this.toString() === 'Object'
 	};
@@ -73,7 +77,7 @@
 			case 'Float':
 				return this.isFloat()
 			default:
-				return this.toString() === type
+				return this.toString() === type || this.toInstance() === type
 		}
 	};
 
