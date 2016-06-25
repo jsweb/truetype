@@ -49,7 +49,7 @@
 	};
 
 	TrueType.prototype.isDefined = function isDefined () {
-		return !this.toString() === 'Undefined'
+		return this.toString() !== 'Undefined'
 	};
 
 	TrueType.prototype.isNumber = function isNumber () {
