@@ -1,3 +1,0 @@
-Todo:
-  ✔ Name of custom constructors @done (16-06-22 12:10)
-  ☐ Write tests

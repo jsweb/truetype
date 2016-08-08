@@ -44,7 +44,7 @@ class TrueType {
 	}
 
 	isDefined() {
-		return !this.toString() === 'Undefined'
+		return this.toString() !== 'Undefined'
 	}
 
 	isNumber() {

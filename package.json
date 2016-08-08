@@ -28,7 +28,6 @@
   "devDependencies": {
     "rollup": "latest",
     "rollup-plugin-buble": "latest",
-    "rollup-plugin-json": "latest",
     "uglify-js": "latest"
   }
 }

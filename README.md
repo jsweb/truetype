@@ -8,43 +8,45 @@ The builtin operators `typeof`, `instanceof` and other methods are not precise t
 
 So, this module aims to check types of variables with more useful returns.
 
----
+***
 
-##Installation
+## Installation
 
-With NPM:
+You can install truetype with Bower or NPM
 
-    npm i -S truetype
+### Bower
 
-With Bower:
+`bower i -S truetype`
 
-    bower i -S truetype
+### NPM
 
-##Usage
+`npm i -S truetype`
 
-###ES6
+## Usage
+
+### ES6
 ```javascript
 import truetype from 'truetype'
 ```
 
-###CommonJS
+### CommonJS
 ```javascript
 var truetype = require('truetype')
 ```
 
-###AMD (RequireJS)
+### AMD (RequireJS)
 ```javascript
 require(['truetype'], function(truetype) {
 	//...
 })
 ```
 
-###Script tag (DOM / Global)
+### Script tag (DOM / Global)
 ```html
 <script src="path/to/truetype"></script>
 ```
 
-###Instance
+## Instance
 
 Just call it passing your variable as argument:
 
@@ -55,15 +57,15 @@ let type = truetype(x)
 
 `truetype` is a function that returns a custom Class Object with the following props and methods:
 
-####truetype(x).item
+### truetype(x).item
 
 The var `x` itself.
 
-####truetype(x).toString()
+### truetype(x).toString()
 
 Returns a string with the JS builtin var type name like `Object`, `Array`, `String`, `Number`...
 
-####truetype(x).instance()
+### truetype(x).instance()
 
 Returns a string with the var constructor name.
 
@@ -80,7 +82,7 @@ truetype(bar).toString() 	//returns Object
 truetype(bar).instance()	//returns Foo
 ```
 
-####truetype(x).is{Type}()
+### truetype(x).is{Type}()
 
 Predefined methods that check if `x` type is `{Type}`.
 
@@ -98,7 +100,7 @@ truetype(null).isNull()					//returns true
 truetype(undefined).isDefined()	//returns false :)
 ```
 
-####truetype(x).is(type)
+### truetype(x).is(type)
 
 Check if `x` type is equal `type` argument and returns a Boolean.
 
@@ -117,7 +119,7 @@ let bar = new Foo(1)
 truetype(bar).is('Foo')		//returns true
 ```
 
-###Module
+### Module
 
 You can choose one of three options according your needs.
 
@@ -125,6 +127,6 @@ You can choose one of three options according your needs.
  - **truetype.umd.js** - Universal Module Definition format to use with AMD, CommonJS, global, browser or any other module loader or compatible JS enviroment
  - **truetype.min.js** - minified with [uglify-js](https://github.com/mishoo/UglifyJS2), compatible with script tag and any module loader, suitable for production, mainly on browsers
 
-##TODO
+## TODO
 
  - Write tests
