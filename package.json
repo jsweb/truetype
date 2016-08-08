@@ -1,6 +1,6 @@
 {
   "name": "truetype",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "Simple JS module to check types more concisely",
   "main": "truetype.umd.js",
   "jsnext:main": "truetype.js",
