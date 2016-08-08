@@ -22,6 +22,10 @@ You can install truetype with Bower or NPM
 
 `npm i -S truetype`
 
+If you are using **JSPM** you can install truetype from NPM:
+
+`jspm i truetype=npm:truetype`
+
 ## Usage
 
 ### ES6
@@ -43,7 +47,7 @@ require(['truetype'], function(truetype) {
 
 ### Script tag (DOM / Global)
 ```html
-<script src="path/to/truetype"></script>
+<script src="path/to/truetype/truetype.min.js"></script>
 ```
 
 ## Instance
@@ -87,17 +91,17 @@ truetype(bar).instance()	//returns Foo
 Predefined methods that check if `x` type is `{Type}`.
 
 ```javascript
-truetype({}).isObject() 				//returns true
-truetype([]).isArray() 					//returns true
-truetype('foo').isString() 			//returns true
-truetype(true).isBoolean() 			//returns true
-truetype(new Date).isDate() 		//returns true
-truetype(1).isNumber() 					//returns true
-truetype(1).isInt() 						//returns true
-truetype(1).isFloat() 					//returns false
-truetype(/\w/).isRegExp() 			//returns true
-truetype(null).isNull()					//returns true
-truetype(undefined).isDefined()	//returns false :)
+truetype({}).isObject() 		//returns true
+truetype([]).isArray() 			//returns true
+truetype('foo').isString() 		//returns true
+truetype(true).isBoolean() 		//returns true
+truetype(new Date).isDate() 	//returns true
+truetype(1).isNumber() 			//returns true
+truetype(1).isInt() 			//returns true
+truetype(1).isFloat() 			//returns false
+truetype(/\w/).isRegExp() 		//returns true
+truetype(null).isNull()			//returns true
+truetype(undefined).isDefined()	//returns false ;)
 ```
 
 ### truetype(x).is(type)
@@ -109,7 +113,7 @@ It's possible to check predefined and custom constructor types.
 ```javascript
 truetype(1).is('String')	//returns false
 truetype(1).is('Number')	//returns true
-truetype(1).is('Int')			//returns true
+truetype(1).is('Int')		//returns true
 truetype(1).is('Float')		//returns false
 
 //Custom types
@@ -118,14 +122,6 @@ let bar = new Foo(1)
 
 truetype(bar).is('Foo')		//returns true
 ```
-
-### Module
-
-You can choose one of three options according your needs.
-
- - **truetype.js** - main source to use with ES2015 applications/enviroments
- - **truetype.umd.js** - Universal Module Definition format to use with AMD, CommonJS, global, browser or any other module loader or compatible JS enviroment
- - **truetype.min.js** - minified with [uglify-js](https://github.com/mishoo/UglifyJS2), compatible with script tag and any module loader, suitable for production, mainly on browsers
 
 ## TODO
 
