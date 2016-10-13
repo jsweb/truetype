@@ -2,7 +2,7 @@ class TrueType {
 	constructor(x) {
 		try {
 			this.item = x
-		} catch(e) {
+		} catch (e) {
 			this.item = undefined
 		}
 	}
@@ -72,7 +72,7 @@ class TrueType {
 			case 'Float':
 				return this.isFloat()
 			default:
-				return this.toString() === type || this.toInstance() === type
+				return this.toString() === type || this.instance() === type
 		}
 	}
 }
