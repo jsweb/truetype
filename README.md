@@ -47,7 +47,7 @@ require(['truetype'], function(truetype) {
 
 ### Script tag (DOM / Global)
 ```html
-<script src="path/to/truetype/truetype.min.js"></script>
+<script src="path/to/truetype/truetype.umd.js"></script>
 ```
 
 ## Instance

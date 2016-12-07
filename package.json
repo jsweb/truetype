@@ -4,7 +4,7 @@
   "description": "Simple JS module to check types more concisely",
   "main": "truetype.umd.js",
   "jsnext:main": "truetype.js",
-  "author": "Alex Bruno <web.alexbr@gmail.com>",
+  "author": "Alex Bruno <master@conext.online>",
   "license": "MIT",
   "keywords": [
     "javascript",
@@ -12,26 +12,39 @@
     "test",
     "check"
   ],
-  "homepage": "https://github.com/alexbruno/truetype#readme",
+  "homepage": "https://gitlab.com/alexbruno/truetype",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexbruno/truetype.git"
+    "url": "git+https://gitlab.com/alexbruno/truetype.git"
   },
   "bugs": {
-    "url": "https://github.com/alexbruno/truetype/issues"
-  },
-  "scripts": {
-    "bundle": "jspm bundle-sfx truetype.js truetype.umd.js --format umd --skip-source-maps --minify",
-    "postinstall": "jspm i && npm run bundle"
+    "url": "https://gitlab.com/alexbruno/truetype/issues"
   },
   "devDependencies": {
-    "jspm": "^0.16.48"
+    "autoprefixer-stylus": "latest",
+    "axis": "latest",
+    "gulp": "latest",
+    "gulp-cached": "latest",
+    "gulp-imagemin": "latest",
+    "gulp-live-server": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-notify": "latest",
+    "gulp-pug": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-stylus": "latest",
+    "jeet": "latest",
+    "nib": "latest",
+    "rollup": "latest",
+    "rollup-plugin-buble": "latest",
+    "rollup-plugin-commonjs": "latest",
+    "rollup-plugin-node-resolve": "latest",
+    "rollup-plugin-uglify": "latest",
+    "rupture": "latest",
+    "vue": "latest"
   },
-  "jspm": {
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
-    }
+  "scripts": {
+    "bundle": "gulp lib",
+    "build": "npm run bundle",
+    "postinstall": "npm run build"
   }
 }
