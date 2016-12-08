@@ -12,13 +12,13 @@
     "test",
     "check"
   ],
-  "homepage": "https://gitlab.com/alexbruno/truetype",
+  "homepage": "https://gitlab.com/conext/truetype",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/alexbruno/truetype.git"
+    "url": "git+https://gitlab.com/conext/truetype.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/alexbruno/truetype/issues"
+    "url": "https://gitlab.com/conext/truetype/issues"
   },
   "devDependencies": {
     "autoprefixer-stylus": "latest",
@@ -41,10 +41,5 @@
     "rollup-plugin-uglify": "latest",
     "rupture": "latest",
     "vue": "latest"
-  },
-  "scripts": {
-    "bundle": "gulp lib",
-    "build": "npm run bundle",
-    "postinstall": "npm run build"
   }
 }

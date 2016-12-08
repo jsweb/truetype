@@ -20,7 +20,7 @@ const gulp = require('gulp'),
 		},
 		use: [nib(), axis(), jeet(), rupture(), autoprefixer()]
 	},
-	bundle = (entry, dest, module, format, map) => {
+	bundle = (entry, dest, format, mod, map) => {
 		return rollup({
 			entry,
 			plugins: [
@@ -38,9 +38,9 @@ const gulp = require('gulp'),
 			js.write({
 				dest,
 				format,
-				moduleId: module,
-				moduleName: module,
-				sourceMap: map,
+				moduleId: mod,
+				moduleName: mod,
+				sourceMap: map
 			})
 			return system.notify({
 				title: 'Gulp',
@@ -83,10 +83,10 @@ gulp.task('pug', done => {
 
 //Rollup
 gulp.task('lib', done => {
-	return bundle('truetype.js', 'truetype.umd.js', 'truetype', 'umd', false)
+	return bundle('truetype.js', 'truetype.umd.js', 'umd', 'truetype', false)
 })
 gulp.task('index', done => {
-	return bundle('web/js/index.js', 'web/index.js', 'index', 'iife', 'inline')
+	return bundle('web/js/index.js', 'web/index.js', 'iife', 'index', 'inline')
 })
 
 //Cache
