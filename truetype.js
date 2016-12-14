@@ -7,48 +7,52 @@ class TrueType {
 		}
 	}
 
-	toString() {
-		return Object.prototype.toString.call(this.item).substr(8).replace(']', '')
-	}
-
 	instance() {
-		return this.item.constructor.name
+		return this.isValid() ? this.item.constructor.name : this.isNull() ? 'Null' : 'Undefined'
 	}
 
-	isObject() {
-		return this.toString() === 'Object'
-	}
-
-	isArray() {
-		return this.toString() === 'Array'
-	}
-
-	isString() {
-		return this.toString() === 'String'
-	}
-
-	isBoolean() {
-		return this.toString() === 'Boolean'
-	}
-
-	isDate() {
-		return this.toString() === 'Date'
-	}
-
-	isRegExp() {
-		return this.toString() === 'RegExp'
-	}
-
-	isNull() {
-		return this.toString() === 'Null'
+	isValid() {
+		return this.isDefined() && this.isNotNull()
 	}
 
 	isDefined() {
-		return this.toString() !== 'Undefined'
+		return this.item !== undefined
+	}
+
+	isNotNull() {
+		return this.item !== null
+	}
+
+	isNull() {
+		return this.item === null
+	}
+
+	isObject() {
+		return this.instance() === 'Object'
+	}
+
+	isArray() {
+		return this.instance() === 'Array'
+	}
+
+	isString() {
+		return this.instance() === 'String'
+	}
+
+	isBoolean() {
+		return this.instance() === 'Boolean'
+	}
+
+	isDate() {
+		return this.instance() === 'Date'
+	}
+
+	isRegExp() {
+		return this.instance() === 'RegExp'
 	}
 
 	isNumber() {
-		return this.toString() === 'Number'
+		return this.instance() === 'Number'
 	}
 
 	isInt() {
@@ -72,7 +76,7 @@ class TrueType {
 			case 'Float':
 				return this.isFloat()
 			default:
-				return this.toString() === type || this.instance() === type
+				return this.instance() === type
 		}
 	}
 }

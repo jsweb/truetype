@@ -65,30 +65,24 @@ let type = truetype(x)
 
 The var `x` itself.
 
-### truetype(x).toString()
-
-Returns a string with the JS builtin var type name like `Object`, `Array`, `String`, `Number`...
-
 ### truetype(x).instance()
 
-Returns a string with the var constructor name.
+Returns a string with the `x` constructor name like `Object`, `Array`, `String`, `Number`...
 
-The returned value will be the same as `toString` if tested var is a builtin type object, else will be the custom constructor name.
+The returned value can be a builtin type or custom constructor name.
 
 ```javascript
-truetype(1).toString() 		//returns Number
 truetype(1).instance() 		//returns Number
 
 let Foo = x => this.x = x
 let bar = new Foo(1)
 
-truetype(bar).toString() 	//returns Object
 truetype(bar).instance()	//returns Foo
 ```
 
 ### truetype(x).is{Type}()
 
-Predefined methods that check if `x` type is `{Type}`.
+Predefined methods that check if `x` type is `{Type}` and returns a Boolean.
 
 ```javascript
 truetype({}).isObject() 		//returns true
@@ -100,8 +94,14 @@ truetype(1).isNumber() 			//returns true
 truetype(1).isInt() 			//returns true
 truetype(1).isFloat() 			//returns false
 truetype(/\w/).isRegExp() 		//returns true
+```
+
+There are 3 special methods to check values:
+
+```javascript
 truetype(null).isNull()			//returns true
-truetype(undefined).isDefined()	//returns false ;)
+truetype(null).isNotNull()		//returns false
+truetype(undefined).isDefined()	//returns false
 ```
 
 ### truetype(x).is(type)
@@ -117,7 +117,7 @@ truetype(1).is('Int')		//returns true
 truetype(1).is('Float')		//returns false
 
 //Custom types
-let Foo = (x) => this.x = x
+let Foo = x => this.x = x
 let bar = new Foo(1)
 
 truetype(bar).is('Foo')		//returns true
