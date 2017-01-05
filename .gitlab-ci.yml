@@ -1,0 +1,16 @@
+image: node:latest
+
+pages:
+  cache:
+    paths:
+    - node_modules/
+
+  script:
+  - npm i -g gulp-cli
+  - npm i
+  - gulp deploy
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
