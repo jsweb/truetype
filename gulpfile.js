@@ -51,7 +51,8 @@ const gulp = require('gulp'),
 		})
 	}
 
-gulp.task('default', ['cache', 'watch', 'server'])
+gulp.task('deploy', ['imagemin', 'stylus', 'pug', 'web', 'data'])
+gulp.task('default', ['deploy', 'cache', 'watch', 'server'])
 
 //Image min
 gulp.task('imagemin', done => {
@@ -81,11 +82,16 @@ gulp.task('pug', done => {
 		.pipe(plg.notify('Pug compilado'))
 })
 
+//Data
+gulp.task('data', done => {
+	return gulp.src('web/data/*').pipe(gulp.dest('public/data'))
+})
+
 //Rollup
 gulp.task('lib', done => {
 	return bundle('truetype.js', 'truetype.umd.js', 'umd', 'truetype', false)
 })
-gulp.task('index', done => {
+gulp.task('web', done => {
 	return bundle('web/js/index.js', 'public/index.js', 'iife', 'index', 'inline')
 })
 
@@ -104,7 +110,7 @@ gulp.task('cache', done => {
 //Watch
 gulp.task('watch', done => {
 	gulp.watch('truetype.js', ['lib'])
-	gulp.watch('web/js/index.js', ['index'])
+	gulp.watch('web/js/index.js', ['web'])
 
 	gulp.watch('web/css/*.styl', ['stylus'])
 	gulp.watch(['web/html/*.pug', 'README.md'], ['pug'])
