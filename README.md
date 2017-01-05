@@ -80,9 +80,9 @@ let bar = new Foo(1)
 truetype(bar).instance()	//returns Foo
 ```
 
-### truetype(x).is{Type}()
+### truetype(x).is{Instance}()
 
-Predefined methods that check if `x` type is `{Type}` and returns a Boolean.
+Predefined methods that check if `x` type is `{Instance}` and returns a Boolean.
 
 ```javascript
 truetype({}).isObject() 		//returns true

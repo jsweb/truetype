@@ -12,6 +12,7 @@ const gulp = require('gulp'),
 	jeet = require('jeet'),
 	rupture = require('rupture'),
 	autoprefixer = require('autoprefixer-stylus'),
+	package = require('./package.json'),
 	stylcfg = {
 		compress: true,
 		sourcemap: {
@@ -57,7 +58,7 @@ gulp.task('imagemin', done => {
 	return gulp.src('web/img/*')
 		.pipe(plg.cached('imagemin'))
 		.pipe(plg.imagemin())
-		.pipe(gulp.dest('web'))
+		.pipe(gulp.dest('public'))
 		.pipe(plg.notify('Imagem otimizada para web'))
 })
 
@@ -68,16 +69,15 @@ gulp.task('stylus', done => {
 		.pipe(plg.sourcemaps.init())
 		.pipe(plg.stylus(stylcfg))
 		.pipe(plg.sourcemaps.write())
-		.pipe(gulp.dest('web'))
+		.pipe(gulp.dest('public'))
 		.pipe(plg.notify('Stylus processado'))
 })
 
 //HTML
 gulp.task('pug', done => {
 	return gulp.src('web/html/*.pug')
-		.pipe(plg.cached('pug'))
-		.pipe(plg.pug())
-		.pipe(gulp.dest('web'))
+		.pipe(plg.pug({ locals: package }))
+		.pipe(gulp.dest('public'))
 		.pipe(plg.notify('Pug compilado'))
 })
 
@@ -86,13 +86,12 @@ gulp.task('lib', done => {
 	return bundle('truetype.js', 'truetype.umd.js', 'umd', 'truetype', false)
 })
 gulp.task('index', done => {
-	return bundle('web/js/index.js', 'web/index.js', 'iife', 'index', 'inline')
+	return bundle('web/js/index.js', 'public/index.js', 'iife', 'index', 'inline')
 })
 
 //Cache
 gulp.task('cache', done => {
 	gulp.src('web/css/*.styl').pipe(plg.cached('stylus'))
-	gulp.src('web/html/*.pug').pipe(plg.cached('pug'))
 	gulp.src('web/img/*').pipe(plg.cached('imagemin'))
 
 	return system.notify({
@@ -108,7 +107,7 @@ gulp.task('watch', done => {
 	gulp.watch('web/js/index.js', ['index'])
 
 	gulp.watch('web/css/*.styl', ['stylus'])
-	gulp.watch('web/html/*.pug', ['pug'])
+	gulp.watch(['web/html/*.pug', 'README.md'], ['pug'])
 	gulp.watch('web/img/*', ['imagemin'])
 
 	return system.notify({
@@ -120,7 +119,7 @@ gulp.task('watch', done => {
 
 //Live server
 gulp.task('server', done => {
-	let srv = server.static('/web', 8888)
+	let srv = server.static('/public', 8888)
 	srv.start()
-	gulp.watch('web/*', file => srv.notify(file))
+	gulp.watch('public/*', file => srv.notify(file))
 })

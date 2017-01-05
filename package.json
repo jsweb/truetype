@@ -33,6 +33,7 @@
     "gulp-sourcemaps": "latest",
     "gulp-stylus": "latest",
     "jeet": "latest",
+    "jstransformer-marked": "latest",
     "nib": "latest",
     "rollup": "latest",
     "rollup-plugin-buble": "latest",
