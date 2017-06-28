@@ -12,7 +12,7 @@ So, this module aims to check types of variables with more useful returns.
 
 ## Installation
 
-You can install truetype with NPM, Yarn, (Snipacks)[https://www.npmjs.com/package/snipacks], Unpkg CDN...
+You can install truetype with NPM, Yarn, [Snipacks](https://www.npmjs.com/package/snipacks), Unpkg CDN...
 
 ### NPM
 
