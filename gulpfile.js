@@ -12,7 +12,7 @@ const gulp = require('gulp'),
 	jeet = require('jeet'),
 	rupture = require('rupture'),
 	autoprefixer = require('autoprefixer-stylus'),
-	package = require('./package.json'),
+	locals = require('./package.json'),
 	stylcfg = {
 		compress: true,
 		sourcemap: {
@@ -77,7 +77,7 @@ gulp.task('stylus', done => {
 //HTML
 gulp.task('pug', done => {
 	return gulp.src('web/html/*.pug')
-		.pipe(plg.pug({ locals: package }))
+		.pipe(plg.pug({ locals }))
 		.pipe(gulp.dest('public'))
 		.pipe(plg.notify('Pug compilado'))
 })
@@ -89,7 +89,7 @@ gulp.task('data', done => {
 
 //Rollup
 gulp.task('lib', done => {
-	return bundle('truetype.js', 'truetype.umd.js', 'umd', 'truetype', false)
+	return bundle('truetype.jsx', 'truetype.js', 'umd', 'truetype', false)
 })
 gulp.task('web', done => {
 	return bundle('web/js/index.js', 'public/index.js', 'iife', 'index', 'inline')
