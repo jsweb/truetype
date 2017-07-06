@@ -12,13 +12,13 @@
     "test",
     "check"
   ],
-  "homepage": "https://gitlab.com/tecno.site/truetype",
+  "homepage": "https://gitlab.com/tecnos/truetype",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/tecno.site/truetype.git"
+    "url": "git+https://gitlab.com/tecnos/truetype.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/tecno.site/truetype/issues"
+    "url": "https://gitlab.com/tecnos/truetype/issues"
   },
   "devDependencies": {
     "autoprefixer-stylus": "latest",
