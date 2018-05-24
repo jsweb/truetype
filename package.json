@@ -3,7 +3,11 @@
   "version": "1.4.3",
   "description": "Simple JS module to check types more concisely",
   "main": "truetype.js",
-  "jsnext:main": "truetype.jsx",
+  "jsnext:main": "truetype.esm.js",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest --coverage"
+  },
   "author": "Alex Bruno <git.alexbr@outlook.com>",
   "license": "MIT",
   "keywords": [
@@ -21,26 +25,9 @@
     "url": "https://gitlab.com/tecnos/truetype/issues"
   },
   "devDependencies": {
-    "autoprefixer-stylus": "latest",
-    "axis": "latest",
-    "gulp": "latest",
-    "gulp-cached": "latest",
-    "gulp-imagemin": "latest",
-    "gulp-live-server": "latest",
-    "gulp-load-plugins": "latest",
-    "gulp-notify": "latest",
-    "gulp-pug": "latest",
-    "gulp-sourcemaps": "latest",
-    "gulp-stylus": "latest",
-    "jeet": "latest",
-    "jstransformer-marked": "latest",
-    "nib": "latest",
+    "jest": "^22.4.4",
     "rollup": "latest",
     "rollup-plugin-buble": "latest",
-    "rollup-plugin-commonjs": "latest",
-    "rollup-plugin-node-resolve": "latest",
-    "rollup-plugin-uglify": "latest",
-    "rupture": "latest",
-    "vue": "latest"
+    "rollup-plugin-uglify": "latest"
   }
 }
