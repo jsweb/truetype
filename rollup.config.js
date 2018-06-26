@@ -2,11 +2,11 @@ import buble from 'rollup-plugin-buble'
 import { uglify } from 'rollup-plugin-uglify'
 
 export default {
-  input: 'truetype.esm.js',
+  input: 'src/truetype.js',
   output: {
     format: 'umd',
     name: 'truetype',
-    file: 'truetype.js',
+    file: 'dist/truetype.js',
     amd: {
       id: 'truetype'
     }

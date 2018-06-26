@@ -1,4 +1,4 @@
-# truetype
+# @jsweb/truetype
 
 **Simple JS module to check types more concisely**
 
@@ -12,51 +12,36 @@ So, this module aims to check types of variables with more useful returns.
 
 ## Installation
 
-You can install truetype with NPM, Yarn, [Snipacks](https://www.npmjs.com/package/snipacks), Unpkg CDN...
-
-### NPM
-
-`npm i -S truetype`
-
-### Yarn
-
-`yarn add truetype`
-
-### Snipacks
-
-`snipacks add unpkg truetype.js truetype`
+You can install with NPM, Yarn or Unpkg CDN:
 
 ### CDN
 
 ```html
-<script src="https://unpkg.com/truetype"></script>
+<script src="https://unpkg.com/@jsweb/truetype"></script>
 ```
 
 ## Usage
 
 ### ES6
 ```javascript
-import truetype from 'truetype'
+import truetype from '@jsweb/truetype'
 ```
 
 ### CommonJS
 ```javascript
-var truetype = require('truetype')
+var truetype = require('@jsweb/truetype')
 ```
 
-### AMD (RequireJS)
-```javascript
-require(['truetype'], function(truetype) {
-	//...
-})
-```
+### CDN
+
+If you install it via CDN, `truetype` object will be available at global window scope.
 
 ## Instance
 
 Just call it with your variable as argument:
 
 ```javascript
-const x = 'foo bar', type = truetype(x)
+const type = truetype('foo bar')
 ```
 
 `truetype` is a function that returns a custom Class Object with the following props and methods:
@@ -93,7 +78,7 @@ Predefined methods that check if `x` type is `{Instance}` and returns a Boolean.
 truetype({}).isObject()             // returns true
 truetype([]).isArray() 			        // returns true
 truetype('foo').isString() 		      // returns true
-truetype(true).isBoolean() 		      // returns true
+truetype(false).isBoolean() 		      // returns true
 truetype(new Date).isDate() 	      // returns true
 truetype(1).isNumber() 			        // returns true
 truetype(/\w/).isRegExp() 		      // returns true
@@ -103,10 +88,11 @@ truetype(function(){}).isFunction() // returns true
 There are 5 special methods to check values:
 
 ```javascript
-truetype(1).isInteger() 			// returns true
-truetype(1.0).isFloat() 		// returns true
-truetype(null).isNull()			// returns true
-truetype(null).isNotNull()		// returns false
+truetype(1).isInteger() 			  // returns true
+truetype(1.0).isFloat() 		    // returns true
+truetype(null).isNull()			    // returns true
+truetype(null).isNotNull()		  // returns false
+truetype(null).isValid()		    // returns false
 truetype(undefined).isDefined()	// returns false
 ```
 

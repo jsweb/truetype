@@ -1,12 +1,12 @@
 {
-  "name": "truetype",
+  "name": "@jsweb/truetype",
   "version": "1.5.1",
   "description": "Simple JS module to check types more concisely",
-  "main": "truetype.js",
-  "jsnext:main": "truetype.esm.js",
+  "main": "dist/truetype.js",
+  "esnext": "src/truetype.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "jest --coverage"
+    "test": "jest"
   },
   "author": "Alex Bruno <git.alexbr@outlook.com>",
   "license": "MIT",
@@ -16,13 +16,13 @@
     "test",
     "check"
   ],
-  "homepage": "https://gitlab.com/tecnos/truetype",
+  "homepage": "https://gitlab.com/webjs/truetype",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/tecnos/truetype.git"
+    "url": "git+https://gitlab.com/webjs/truetype.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/tecnos/truetype/issues"
+    "url": "https://gitlab.com/webjs/truetype/issues"
   },
   "devDependencies": {
     "jest": "^22.4.4",

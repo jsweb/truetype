@@ -35,10 +35,6 @@ class TrueType {
 		return this.instance() === 'Number'
   }
 
-  isInt() {
-    return this.isInteger()
-  }
-
 	isInteger() {
     return this.isNumber() && this.value === parseInt(this.value)
 	}

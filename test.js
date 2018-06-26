@@ -1,4 +1,4 @@
-const type = require('./truetype')
+const type = require('./dist/truetype')
 
 it('import should return a Function', () => {
   const test = type(type)
