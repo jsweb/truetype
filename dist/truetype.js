@@ -1,1 +1,17 @@
-!function(t,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define("truetype",n):t.truetype=n()}(this,function(){"use strict";var n=function(t){this.value=t};return n.prototype.isDefined=function(){return void 0!==this.value},n.prototype.isNull=function(){return null===this.value},n.prototype.isNotNull=function(){return null!==this.value},n.prototype.isValid=function(){return this.isDefined()&&this.isNotNull()},n.prototype.instance=function(){return this.isValid()?this.value.constructor.name:this.isNull()?"Null":"Undefined"},n.prototype.isBoolean=function(){return"Boolean"===this.instance()},n.prototype.isString=function(){return"String"===this.instance()},n.prototype.isNumber=function(){return"Number"===this.instance()},n.prototype.isInteger=function(){return this.isNumber()&&this.value===parseInt(this.value)},n.prototype.isFloat=function(){return this.isNumber()&&this.value!==parseInt(this.value)},n.prototype.isObject=function(){return"Object"===this.instance()},n.prototype.isArray=function(){return Array.isArray(this.value)},n.prototype.isDate=function(){return"Date"===this.instance()},n.prototype.isRegExp=function(){return"RegExp"===this.instance()},n.prototype.isFunction=function(){return"Function"===this.instance()},n.prototype.is=function(t){switch(t){case"Int":return this.isInt();case"Integer":return this.isInteger();case"Float":return this.isFloat();default:return this.instance()===t}},n.prototype.valueOf=function(){return this.value},n.prototype.toString=function(){return this.value.toString()},function(t){return new n(t)}});
+/**
+ * @author Alex Bruno Cáceres
+ * @email git.alexbr@outlook.com
+ * @date 2016-06-21 01:16:15
+ * @desc Simple JS module to generate random id/key/hash in various formats, including UUID
+ */
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global.truetype = factory());
+}(this, (function () { 'use strict';
+
+  function truetype(a){return {get isDefined(){return a!==void 0},get isNull(){return null===a},get isNotNull(){return null!==a},get isValid(){return this.isDefined&&this.isNotNull},get instance(){return this.isValid?a.constructor.name:this.isNull?"Null":"Undefined"},get isBoolean(){return "Boolean"===this.instance},get isString(){return "String"===this.instance},get isNumber(){return "Number"===this.instance},get isInteger(){return this.isNumber&&a===parseInt(a)},get isFloat(){return this.isNumber&&a!==parseInt(a)},get isObject(){return "Object"===this.instance},get isArray(){return Array.isArray(a)},get isDate(){return "Date"===this.instance},get isRegExp(){return "RegExp"===this.instance},get isFunction(){return "Function"===this.instance},get value(){return a},is(a){return "Integer"===a?this.isInteger:"Float"===a?this.isFloat:this.instance===a},valueOf(){return a},toString(){return a.toString()}}}
+
+  return truetype;
+
+})));

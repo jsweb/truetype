@@ -5,8 +5,9 @@
   "main": "dist/truetype.js",
   "esnext": "src/truetype.js",
   "scripts": {
-    "build": "rollup -c",
-    "test": "jest"
+    "dist": "rollup -c",
+    "test": "mocha dist",
+    "report": "npm t -- --reporter mochawesome --reporter-options reportTitle=@jsweb/truetype"
   },
   "author": "Alex Bruno <git.alexbr@outlook.com>",
   "license": "MIT",
@@ -16,18 +17,20 @@
     "test",
     "check"
   ],
-  "homepage": "https://gitlab.com/webjs/truetype",
+  "homepage": "https://truetype.jsweb.app",
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/webjs/truetype.git"
+    "url": "git+https://github.com/jsweb/truetype.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/webjs/truetype/issues"
+    "url": "https://github.com/jsweb/truetype/issues"
   },
   "devDependencies": {
-    "jest": "^22.4.4",
-    "rollup": "latest",
-    "rollup-plugin-buble": "latest",
-    "rollup-plugin-uglify": "latest"
+    "@babel/core": "^7.0.0",
+    "babel-preset-minify": "^0.4.3",
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.0.3",
+    "rollup": "^0.65.0",
+    "rollup-plugin-babel": "^4.0.2"
   }
 }
