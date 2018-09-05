@@ -1,5 +1,5 @@
 import { equal } from 'assert'
-import type from './truetype'
+import type from './main'
 
 describe('@jsweb/truetype', () => {
   it('import should return a Function', () => {

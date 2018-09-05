@@ -2,11 +2,14 @@
   "name": "@jsweb/truetype",
   "version": "2.0.0",
   "description": "Simple JS module to check types more concisely",
-  "main": "dist/truetype.js",
-  "esnext": "src/truetype.js",
+  "main": "dist/main.js",
+  "esnext": "src/main.js",
   "scripts": {
-    "dist": "rollup -c",
-    "test": "mocha dist",
+    "dist": "run-s dist:*",
+    "dist:build": "rollup -c",
+    "dist:minify": "minify dist/main.js -d dist",
+    "dist:banner": "concat src/author.js dist/main.js -o dist/main.js",
+    "test": "npm run dist && mocha dist",
     "report": "npm t -- --reporter mochawesome --reporter-options reportTitle=@jsweb/truetype"
   },
   "author": "Alex Bruno <git.alexbr@outlook.com>",
@@ -27,9 +30,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "babel-preset-minify": "^0.4.3",
+    "babel-minify": "^0.4.3",
+    "concat": "^1.0.3",
     "mocha": "^5.2.0",
     "mochawesome": "^3.0.3",
+    "npm-run-all": "^4.1.3",
     "rollup": "^0.65.0",
     "rollup-plugin-babel": "^4.0.2"
   }

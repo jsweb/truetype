@@ -3,7 +3,7 @@
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
 var assert = require('assert');
-var type = _interopDefault(require('./truetype'));
+var type = _interopDefault(require('./main'));
 
 describe('@jsweb/truetype', () => {
   it('import should return a Function', () => {
