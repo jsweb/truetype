@@ -1,4 +1,4 @@
-export default function(value: any) {
+export default function truetype(value: any) {
   return {
     get isDefined() {
       return value !== undefined;
