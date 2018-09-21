@@ -1,19 +1,19 @@
-import babel from 'rollup-plugin-babel'
+import typescript from 'rollup-plugin-typescript'
 
 export default [{
-  input: 'src/main.js',
-  plugins: [babel()],
+  input: 'src/main.ts',
+  plugins: [typescript()],
   output: {
-    format: 'umd',
-    name: 'truetype',
-    file: 'dist/main.js'
+    format: 'esm',
+    name: 'randkey',
+    file: 'dist/esnext.js'
   }
 }, {
-  input: 'src/test.js',
-  external: ['assert', './main'],
+  input: 'src/main.ts',
+  plugins: [typescript()],
   output: {
-    format: 'cjs',
-    name: 'test',
-    file: 'dist/test.js'
+    format: 'umd',
+    name: 'randkey',
+    file: 'dist/main.js'
   }
 }]
