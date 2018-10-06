@@ -10,10 +10,6 @@ So, this module aims to check types of variables with more useful returns.
 
 ***
 
-## Important note
-
-**v3.0.0** comes with breaking changes. If you were using older versions, you will need to change your code to upgrade.
-
 ## Installation
 
 You can install with NPM, Yarn or Unpkg CDN:
@@ -34,7 +30,7 @@ yarn add @jsweb/truetype
 
 ### ES6
 
-Tree shaking:
+Tree shaking (since v3.0.0):
 
 ```javascript
 import { isInteger, isDate, isNotNull, ... } from '@jsweb/truetype'

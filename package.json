@@ -25,10 +25,11 @@
   "scripts": {
     "dist": "run-s dist:*",
     "dist:clean": "rimraf dist",
-    "dist:lint": "tslint -p . -c tslint.json",
+    "dist:test": "npm t",
     "dist:types": "tsc --removeComments --emitDeclarationOnly",
     "dist:build": "rollup -c",
     "test": "run-s test:*",
+    "test:lint": "tslint -p . -c tslint.json",
     "test:clean": "rimraf mocha*",
     "test:unit": "mocha src/**/*.test.ts --require ts-node/register",
     "test:report": "npm run test:unit -- --reporter mochawesome --reporter-options reportTitle=@jsweb/truetype",
