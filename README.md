@@ -117,47 +117,47 @@ const bar = new Foo(1)
 is(bar, 'Foo')  // returns true
 ```
 
-## isBoolean(value: any): boolean
+### isBoolean(value: any): boolean
 
 Check if value is a boolean.
 
-## isString(value: any): boolean
+### isString(value: any): boolean
 
 Check if value is a string.
 
-## isNumber(value: any): boolean
+### isNumber(value: any): boolean
 
 Check if value is a number.
 
-## isInteger(value: any): boolean
+### isInteger(value: any): boolean
 
 Check if value is an integer number.
 
-## isFloat(value: any): boolean
+### isFloat(value: any): boolean
 
 Check if value is a float point number.
 
-## isObject(value: any): boolean
+### isObject(value: any): boolean
 
 Check if value is an object.
 
-## isArray(value: any): boolean
+### isArray(value: any): boolean
 
 Check if value is an Array.
 
-## isDate(value: any): boolean
+### isDate(value: any): boolean
 
 Check if value is a Date object.
 
-## isRegExp(value: any): boolean
+### isRegExp(value: any): boolean
 
 Check if value is a Regular Expression.
 
-## isFunction(value: any): boolean
+### isFunction(value: any): boolean
 
 Check if value is a function.
 
-## isEmpty(value: string | array | object): boolean
+### isEmpty(value: string | array | object): boolean
 
 This is a bonus utility.
 
