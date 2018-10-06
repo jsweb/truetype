@@ -1,12 +1,20 @@
 # @jsweb/truetype
 
-**Simple JS module to check types more consistently**
+Simple JS module to check types more consistently.
 
 Check types in JavaScript is not so easy.
 
 The builtin operators `typeof`, `instanceof` and other methods are not precise to report the exact type of a value.
 
 So, this module aims to check types of variables with more useful returns.
+
+See tests at [https://truetype.jsweb.app](https://truetype.jsweb.app)
+
+![js-umd](https://img.shields.io/badge/js-umd-blue.svg?style=for-the-badge)
+![ecma-module](https://img.shields.io/badge/ecma-module-blue.svg?style=for-the-badge)
+![npm-package](https://img.shields.io/badge/npm-package-blue.svg?style=for-the-badge)
+![code-typescript](https://img.shields.io/badge/code-typescript-blue.svg?style=for-the-badge)
+![tests-mocha](https://img.shields.io/badge/tests-mocha-blue.svg?style=for-the-badge)
 
 ***
 
