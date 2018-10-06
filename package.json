@@ -30,7 +30,7 @@
     "dist:build": "rollup -c",
     "test": "run-s test:*",
     "test:clean": "rimraf mocha*",
-    "test:unit": "mocha src/**/*.test.ts --compilers ts:ts-node/register",
+    "test:unit": "mocha src/**/*.test.ts --require ts-node/register",
     "test:report": "npm run test:unit -- --reporter mochawesome --reporter-options reportTitle=@jsweb/truetype",
     "prepare": "npm run dist"
   },
