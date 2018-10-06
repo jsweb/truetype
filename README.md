@@ -1,6 +1,6 @@
 # @jsweb/truetype
 
-**Simple JS module to check types more concisely**
+**Simple JS module to check types more consistently**
 
 Check types in JavaScript is not so easy.
 
@@ -9,6 +9,10 @@ The builtin operators `typeof`, `instanceof` and other methods are not precise t
 So, this module aims to check types of variables with more useful returns.
 
 ***
+
+## Important note
+
+**v3.0.0** comes with breaking changes. If you were using older versions, you will need to change your code to upgrade.
 
 ## Installation
 
@@ -29,8 +33,11 @@ yarn add @jsweb/truetype
 ## Usage
 
 ### ES6
+
+Tree shaking:
+
 ```javascript
-import truetype from '@jsweb/truetype'
+import { isInteger, isDate, isNotNull, ... } from '@jsweb/truetype'
 ```
 
 ### CommonJS
@@ -42,30 +49,34 @@ const truetype = require('@jsweb/truetype')
 
 If you install it via CDN, `truetype` object will be available at global window scope.
 
-## Instance
+## Functions
 
-Just call it with your value as argument:
+### isDefined(value: any): boolean
+
+Check if a value is not undefined.
+
+### isNull(value: any): boolean
+
+Check if value is null.
+
+### isNotNull(value: any): boolean
+
+Check if value is not null.
+
+### isValid(value: any): boolean
+
+Check if value is "valid" (is not null or undefined).
+
+### instance(value: any): string
+
+Get the constructor name of the value.
+
+Returns a string with a type name like `Object`, `Array`, `String`, `Number`, ...
+
+Can be a native or custom constructor name.
 
 ```javascript
-const type = truetype('foo bar')
-```
-
-`truetype` is a function that returns an Object that conatains the following props and methods:
-
-## Props
-
-### truetype(x).value
-
-The value of `x` itself.
-
-### truetype(x).instance
-
-Returns a string with the `x` constructor name like `Object`, `Array`, `String`, `Number`, ...
-
-The returned value can be a builtin or custom constructor name.
-
-```javascript
-truetype(1).instance  // returns Number
+instance(1)  // returns Number
 
 class Foo {
   constructor(x) {
@@ -75,65 +86,77 @@ class Foo {
 
 const bar = new Foo(1)
 
-truetype(bar).instance  // returns Foo
+instance(bar)  // returns Foo
 ```
 
-### truetype(x).is${Instance}
+### is(value: any, type: string): boolean
 
-Predefined getters that check if `x` type is native `${Instance}` and returns a Boolean.
+Check if `value` is of `type`.
 
-```javascript
-truetype({}).isObject         // returns true
-truetype([]).isArray          // returns true
-truetype('foo').isString      // returns true
-truetype(false).isBoolean     // returns true
-truetype(new Date).isDate     // returns true
-truetype(1).isNumber          // returns true
-truetype(/\w/).isRegExp       // returns true
-truetype(() => {}).isFunction // returns true
-```
-
-There are 5 special props to check values:
+Can be a native or custom constructor name.
 
 ```javascript
-truetype(1).isInteger         // returns true
-truetype(1.0).isFloat         // returns true
-truetype(null).isNull         // returns true
-truetype(null).isNotNull      // returns false
-truetype(null).isValid        // returns false
-truetype(undefined).isDefined // returns false
-```
+is({}, 'Object')         // returns true
+is([], 'Array')          // returns true
+is('foo', 'String')      // returns true
+is(false, 'Boolean')     // returns true
+// ...
 
-## Methods
-
-### truetype(x).is(type)
-
-Check if `x` type is equal `type` string argument and returns a Boolean.
-
-It's possible to check predefined and custom constructor types.
-
-```javascript
-truetype(1).is('String')  // returns false
-truetype(1).is('Number')  // returns true
-truetype(1).is('Integer') // returns true
-truetype(1).is('Float')   // returns false
-
-//Custom types
 class Foo {
-	constructor(x) {
-		this.x = x
-	}
+  constructor(x) {
+    this.x = x
+  }
 }
 
-const foo = new Foo(1)
+const bar = new Foo(1)
 
-truetype(foo).is('Foo') // returns true
+is(bar, 'Foo')  // returns true
 ```
 
-### truetype(x).valueOf()
+## isBoolean(value: any): boolean
 
-Simply returns the value itself, like native method.
+Check if value is a boolean.
 
-### truetype(x).toString()
+## isString(value: any): boolean
 
-Simply proxy to `value.toString()` native method.
+Check if value is a string.
+
+## isNumber(value: any): boolean
+
+Check if value is a number.
+
+## isInteger(value: any): boolean
+
+Check if value is an integer number.
+
+## isFloat(value: any): boolean
+
+Check if value is a float point number.
+
+## isObject(value: any): boolean
+
+Check if value is an object.
+
+## isArray(value: any): boolean
+
+Check if value is an Array.
+
+## isDate(value: any): boolean
+
+Check if value is a Date object.
+
+## isRegExp(value: any): boolean
+
+Check if value is a Regular Expression.
+
+## isFunction(value: any): boolean
+
+Check if value is a function.
+
+## isEmpty(value: string | array | object): boolean
+
+This is a bonus utility.
+
+Check if value is empty.
+
+Only for string, array and objects. Any other type will return false.
