@@ -7,5 +7,5 @@
   "rules": {
     "quotemark": [true, "single"]
   },
-  "rulesDirectory": []
+  "rulesDirectory": [],
 }
