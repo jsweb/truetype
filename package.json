@@ -1,6 +1,6 @@
 {
   "name": "@jsweb/truetype",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Simple JS module to check types more consistently",
   "main": "dist/umd.js",
   "esnext": "dist/module.mjs",
