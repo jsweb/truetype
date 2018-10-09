@@ -31,8 +31,7 @@
     "test": "run-s test:*",
     "test:lint": "tslint -p . -c tslint.json",
     "test:clean": "rimraf mocha*",
-    "test:unit": "mocha src/**/*.test.ts --require ts-node/register",
-    "test:report": "npm run test:unit -- --reporter mochawesome --reporter-options reportTitle=@jsweb/truetype",
+    "test:unit": "mocha src/**/*.test.ts --require ts-node/register --reporter mochawesome --reporter-options reportTitle=@jsweb/truetype",
     "prepare": "npm run dist"
   },
   "devDependencies": {
