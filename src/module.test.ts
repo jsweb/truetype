@@ -21,7 +21,7 @@ import {
 
 class Custom {}
 const custom = new Custom();
-const async = new Promise((done, fail) => done() || fail());
+const async = Promise.resolve(true);
 
 describe('@jsweb/truetype', () => {
   it('isDefined', () => {
