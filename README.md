@@ -2,37 +2,35 @@
 
 Simple JS module to check types more consistently.
 
-Check types in JavaScript is not so easy.
+Check types in JavaScript is not so easy...
 
-The builtin operators `typeof`, `instanceof` and other methods are not precise to report the exact type of a value.
+The builtin operators `typeof`, `instanceof` and other methods are not precise enough to report the exact type of a value.
 
 So, this module aims to check types of variables with more useful returns.
 
 See tests at [https://truetype.jsweb.app](https://truetype.jsweb.app)
 
-![js-umd](https://img.shields.io/badge/js-umd-blue.svg?style=for-the-badge)
-![ecma-module](https://img.shields.io/badge/ecma-module-blue.svg?style=for-the-badge)
 ![npm-package](https://img.shields.io/badge/npm-package-blue.svg?style=for-the-badge)
-![code-typescript](https://img.shields.io/badge/code-typescript-blue.svg?style=for-the-badge)
+![es6-module](https://img.shields.io/badge/es6-module-blue.svg?style=for-the-badge)
 ![tests-mocha](https://img.shields.io/badge/tests-mocha-blue.svg?style=for-the-badge)
 
-***
+## New in v4.0.0
+
+Now, its a full ES module, there is no UMD or CommonJS version.
+
+In modern JS development ES modules are the pattern, already supported in newer versions of Node.js and modern borwsers natively.
+
+Backward compatibility is not a concern here. If you use a module bundler (like Webpack or Rollup) to transpile your code, the result will be compatible according to your setup.
+
+---
 
 ## Installation
 
 You can install with NPM, Yarn or Unpkg CDN:
 
-```
-npm i -S @jsweb/truetype
-```
+`npm i -S @jsweb/truetype`
 
-```
-yarn add @jsweb/truetype
-```
-
-```html
-<script src="https://unpkg.com/@jsweb/truetype"></script>
-```
+`yarn add @jsweb/truetype`
 
 ## Usage
 
@@ -41,19 +39,20 @@ yarn add @jsweb/truetype
 Tree shaking (since v3.0.0):
 
 ```javascript
-import { isInteger, isDate, isNotNull, ... } from '@jsweb/truetype'
+import { isInteger, isDate, isNotNull } from '@jsweb/truetype'
 ```
 
-### CommonJS
-```javascript
-const truetype = require('@jsweb/truetype')
+### From CDN (installation not required)
+
+```html
+<script type="module">
+  import { isNumber } from 'https://unpkg.com/@jsweb/truetype'
+
+  const number = isNumber(1)
+</script>
 ```
 
-### CDN
-
-If you install it via CDN, `truetype` object will be available at global window scope.
-
-## Functions
+## Methods
 
 ### isDefined(value: any): boolean
 
@@ -80,7 +79,7 @@ Returns a string with a type name like `Object`, `Array`, `String`, `Number`, ..
 Can be a native or custom constructor name.
 
 ```javascript
-instance(1)  // returns Number
+instance(1) // returns Number
 
 class Foo {
   constructor(x) {
@@ -90,7 +89,7 @@ class Foo {
 
 const bar = new Foo(1)
 
-instance(bar)  // returns Foo
+instance(bar) // returns Foo
 ```
 
 ### is(value: any, type: string): boolean
@@ -100,10 +99,10 @@ Check if `value` is of `type`.
 Can be a native or custom constructor name.
 
 ```javascript
-is({}, 'Object')         // returns true
-is([], 'Array')          // returns true
-is('foo', 'String')      // returns true
-is(false, 'Boolean')     // returns true
+is({}, 'Object') // returns true
+is([], 'Array') // returns true
+is('foo', 'String') // returns true
+is(false, 'Boolean') // returns true
 // ...
 
 class Foo {
@@ -114,7 +113,7 @@ class Foo {
 
 const bar = new Foo(1)
 
-is(bar, 'Foo')  // returns true
+is(bar, 'Foo') // returns true
 ```
 
 ### isBoolean(value: any): boolean
