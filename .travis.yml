@@ -7,7 +7,7 @@ install:
   - npm ci
 
 script:
-  - npm run dist
+  - npm t
 
 deploy:
   provider: npm
