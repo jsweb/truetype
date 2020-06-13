@@ -1,11 +1,14 @@
 language: node_js
+
 node_js:
-- node
-sudo: false
+  - node
+
 install:
-- npm i
+  - npm ci
+
 script:
-- npm t
+  - npm run dist
+
 deploy:
   provider: npm
   email: git.alexbr@outlook.com
