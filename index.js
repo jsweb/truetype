@@ -1,10 +1,10 @@
 /**
  * @name @jsweb/truetype
- * @version 4.0.2
+ * @version 4.0.3
  * @desc Simple JS module to check types more consistently
  * @author Alex Bruno <git.alexbr@outlook.com>
  * @create date 2016-06-26 03:21:18
- * @modify date 2020-06-13 19:20:25
+ * @modify date 2020-06-13 19:20:39
  */
 /**
  * Check if a value is not undefined
