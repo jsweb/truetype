@@ -1,6 +1,6 @@
 {
   "name": "@jsweb/truetype",
-  "version": "3.0.10",
+  "version": "4.0.0",
   "description": "Simple JS module to check types more consistently",
   "scripts": {
     "test": "run-s test:*",
