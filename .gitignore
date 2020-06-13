@@ -1,7 +1,5 @@
 mochawesome-report
 node_modules
-index.js
-!src/index.js
 
 # Logs
 logs
