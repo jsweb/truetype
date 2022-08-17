@@ -1,6 +1,6 @@
 {
   "name": "@jsweb/truetype",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "Simple JS module to check types consistently and concisely",
   "type": "module",
   "main": "dist/truetype.js",
