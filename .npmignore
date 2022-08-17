@@ -1,12 +1,17 @@
-mochawesome-report
-node_modules
+coverage
 src
 .gitignore
 .prettierrc.json
-.travis.yml
+esbuild.js
 netlify.toml
+tsconfig.json
+tsconfig.build.json
+
+# Dependencies
+node_modules
 package-lock.json
-rollup.config.js
+pnpm-lock.yaml
+yarn.lock
 
 # Logs
 logs

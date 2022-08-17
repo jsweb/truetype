@@ -1,24 +1,26 @@
 # @jsweb/truetype
 
-Simple JS module to check types more consistently.
+Simple JS module to check types consistently and concisely.
 
-Check types in JavaScript is not so easy...
+Tests coverage at [https://truetype.jsweb.app](https://truetype.jsweb.app)
+
+![package-npm](https://img.shields.io/badge/package-npm-blue.svg?style=for-the-badge)
+![module-es](https://img.shields.io/badge/module-es-blue.svg?style=for-the-badge)
+![tests-ava](https://img.shields.io/badge/tests-ava-blue.svg?style=for-the-badge)
+
+## Why?
+
+Checking types in JavaScript is not so easy...
 
 The builtin operators `typeof`, `instanceof` and other methods are not precise enough to report the exact type of a value.
 
 So, this module aims to check types of variables with more useful returns.
 
-See tests at [https://truetype.jsweb.app](https://truetype.jsweb.app)
-
-![npm-package](https://img.shields.io/badge/npm-package-blue.svg?style=for-the-badge)
-![es6-module](https://img.shields.io/badge/es6-module-blue.svg?style=for-the-badge)
-![tests-mocha](https://img.shields.io/badge/tests-mocha-blue.svg?style=for-the-badge)
-
 ## New in v4.0.0
 
 Now, its a full ES module, there is no UMD or CommonJS version.
 
-In modern JS development ES modules are the pattern, already supported in newer versions of Node.js and modern borwsers natively.
+ES modules are the new pattern in modern JS development, already supported in newer versions of Node.js and modern borwsers natively.
 
 Backward compatibility is not a concern here. If you use a module bundler (like Webpack or Rollup) to transpile your code, the result will be compatible according to your setup.
 
@@ -31,6 +33,8 @@ You can install with NPM, Yarn or Unpkg CDN:
 `npm i -S @jsweb/truetype`
 
 `yarn add @jsweb/truetype`
+
+`pnpm add @jsweb/truetype`
 
 ## Usage
 
