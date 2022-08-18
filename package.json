@@ -36,7 +36,7 @@
     "build:test": "ava",
     "build:dist": "node esbuild.js",
     "build:types": "tsc -p tsconfig.build.json --emitDeclarationOnly",
-    "upd8": "rm -rf node_modules && pnpm i",
+    "upd8": "rm -rf node_modules pnpm-lock.yaml && pnpm i",
     "preversion": "npm t",
     "postversion": "git push && git push --tags"
   },
